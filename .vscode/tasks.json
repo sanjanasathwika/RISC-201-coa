@@ -1,0 +1,133 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "★ DEMONSTRATE ALL UNITS: Complete Architecture Showcase",
+      "type": "process",
+      "command": "${workspaceFolder}/build/risc201.exe",
+      "args": ["demo"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "1. Demonstrate ALU Unit (Kogge-Stone, CSLA, CLA, Radix-4, Fast Division)",
+      "type": "process",
+      "command": "${workspaceFolder}/build/risc201.exe",
+      "args": ["alu-demo"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "2. Demonstrate Control Units (Hardwired vs Horizontal vs Vertical Microcode)",
+      "type": "process",
+      "command": "${workspaceFolder}/build/risc201.exe",
+      "args": ["compare", "programs/factorial.s"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "3. Demonstrate Memory, L1 Cache & 64KB Little-Endian Layout",
+      "type": "process",
+      "command": "${workspaceFolder}/build/risc201.exe",
+      "args": ["mem-demo"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "4. Demonstrate Pipeline Hazards & Dynamic Branch Predictor",
+      "type": "process",
+      "command": "${workspaceFolder}/build/risc201.exe",
+      "args": ["compare", "programs/hazard_test.s"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "5. Run Factorial Program (Recursive Subroutine: 5! = 120)",
+      "type": "process",
+      "command": "${workspaceFolder}/build/risc201.exe",
+      "args": ["run", "programs/factorial.s", "4", "hardwired", "optimized"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "6. Run All Testcases (78/78 Unit & Integration Tests)",
+      "type": "process",
+      "command": "${workspaceFolder}/build/risc201_tests.exe",
+      "args": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "7. Compile Project (CMake Build with GCC/G++)",
+      "type": "process",
+      "command": "cmake",
+      "args": ["--build", "${workspaceFolder}/build"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

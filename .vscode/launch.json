@@ -1,0 +1,51 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "★ Run Full Architecture Demonstration",
+      "type": "powershell",
+      "request": "launch",
+      "script": "${workspaceFolder}/scripts/demonstrate_all.ps1",
+      "args": ["-Unit", "all"]
+    },
+    {
+      "name": "Run All Tests (78/78 Tests)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/risc201_tests.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb.exe"
+    },
+    {
+      "name": "Run Simulator (Factorial Program)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/risc201.exe",
+      "args": ["run", "programs/factorial.s", "4", "hardwired", "optimized"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb.exe"
+    },
+    {
+      "name": "Run Simulator (ALU Demo)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/risc201.exe",
+      "args": ["alu-demo"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb.exe"
+    }
+  ]
+}
